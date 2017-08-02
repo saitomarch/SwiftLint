@@ -147,7 +147,8 @@ class RulesTests: XCTestCase {
     }
 
     func testLeadingWhitespace() {
-        verifyRule(LeadingWhitespaceRule.description, testMultiByteOffsets: false, testShebang: false)
+        verifyRule(LeadingWhitespaceRule.description, skipDisableCommandTests: true,
+                   testMultiByteOffsets: false, testShebang: false)
     }
 
     func testLegacyCGGeometryFunctions() {
@@ -167,7 +168,7 @@ class RulesTests: XCTestCase {
     }
 
     func testLetVarWhitespace() {
-        verifyRule(LetVarWhitespaceRule.description)
+        verifyRule(LetVarWhitespaceRule.description, skipDisableCommandTests: true)
     }
 
     func testMark() {
