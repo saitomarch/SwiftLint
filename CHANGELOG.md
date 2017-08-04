@@ -15,12 +15,22 @@
   [Ornithologist Coder](https://github.com/ornithocoder)
   [#1370](https://github.com/realm/SwiftLint/issues/1370)
 
+* Truncate long configuration console descriptions to 80 characters when running
+  `swiftlint rules`.  
+  [JP Simard](https://github.com/jpsim)
+  [#1002](https://github.com/realm/SwiftLint/issues/1002)
+
 ##### Bug Fixes
 
 * Fix false positive on `force_unwrapping` rule when declaring
   local variable with implicity unwrapped type.  
   [Otávio Lima](https://github.com/otaviolima)
   [#1710](https://github.com/realm/SwiftLint/issues/1710)
+
+* Print multi-line configuration values in a single line when running
+  `swiftlint rules` to avoid breaking the table format.  
+  [JP Simard](https://github.com/jpsim)
+  [#1002](https://github.com/realm/SwiftLint/issues/1002)
 
 ## 0.21.0: Vintage Washboard
 
