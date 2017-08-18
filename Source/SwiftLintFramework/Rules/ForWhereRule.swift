@@ -25,6 +25,10 @@ public struct ForWhereRule: ASTRule, ConfigurationProviderRule {
             "for user in users {\n" +
             "   if let id = user.id { }\n" +
             "}\n",
+            // if var
+            "for user in users {\n" +
+            "   if var id = user.id { }\n" +
+            "}\n",
             // if with else
             "for user in users {\n" +
             "   if user.id == 1 { } else { }\n" +
@@ -39,10 +43,15 @@ public struct ForWhereRule: ASTRule, ConfigurationProviderRule {
             "   if user.id == 1 { }\n" +
             "   print(user)\n" +
             "}\n",
-            // if a variable is used
+            // if a literal is used
             "for user in users {\n" +
             "   let id = user.id\n" +
             "   if id == 1 { }\n" +
+            "}\n",
+            // if a variable is used
+            "for user in users {\n" +
+            "   var id = user.id\n" +
+            "   if var == 1 { }\n" +
             "}\n",
             // if something is after if
             "for user in users {\n" +
@@ -136,6 +145,11 @@ public struct ForWhereRule: ASTRule, ConfigurationProviderRule {
 
             let containsLet = !file.match(pattern: "\\blet\\b", with: [.keyword], range: range).isEmpty
             if containsLet {
+                return true
+            }
+            
+            let containsVar = !file.match(pattern: "\\bvar\\b", with: [.keyword], range: range).isEmpty
+            if containsVar {
                 return true
             }
 
