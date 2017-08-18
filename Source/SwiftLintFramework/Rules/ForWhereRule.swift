@@ -147,7 +147,7 @@ public struct ForWhereRule: ASTRule, ConfigurationProviderRule {
             if containsLet {
                 return true
             }
-            
+
             let containsVar = !file.match(pattern: "\\bvar\\b", with: [.keyword], range: range).isEmpty
             if containsVar {
                 return true

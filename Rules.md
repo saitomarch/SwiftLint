@@ -3819,6 +3819,13 @@ for user in users {
 
 ```swift
 for user in users {
+   if var id = user.id { }
+}
+
+```
+
+```swift
+for user in users {
    if user.id == 1 { } else { }
 }
 
@@ -3844,6 +3851,14 @@ for user in users {
 for user in users {
    let id = user.id
    if id == 1 { }
+}
+
+```
+
+```swift
+for user in users {
+   var id = user.id
+   if var == 1 { }
 }
 
 ```
